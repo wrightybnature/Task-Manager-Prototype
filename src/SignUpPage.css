@@ -1,0 +1,127 @@
+/* SignUp.css */
+
+.social-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  
+  .social-buttons button {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 30px;
+    color: #888; /* Add this line to set a default icon color */
+  }  
+
+  .facebook-btn:hover {
+    background-color: #145599;
+    color: #fff;
+  }
+  
+  .google-btn:hover {
+    background-color: #b63a27;
+    color: #fff;
+  }
+  
+  .twitter-btn:hover {
+    background-color: #198ed6;
+    color: #fff;
+  }
+  
+  .linkedin-btn:hover {
+    background-color: #006192;
+    color: #fff;
+  }
+  
+  
+  .separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .separator::before,
+  .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .separator span {
+    padding: 0 10px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form input {
+    width: 100%;
+    max-width: 320px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+  }
+  
+  form button[type="submit"] {
+    width: 100%;
+    max-width: 320px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  form .password-container {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  form .password-container button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .password-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-with-icon {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  .toggle-password-eye {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: none; /* Remove button background */
+    border: none; /* Remove button border */
+  }
+  
+  .toggle-password-eye svg {
+    color: #333; /* Change this to the desired color */
+  }

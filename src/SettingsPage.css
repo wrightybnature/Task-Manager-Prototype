@@ -1,0 +1,14 @@
+/* Settings.css */
+
+.settings-input {
+    display: block;
+    width: 10%;
+    max-width: 30%;
+    margin: 0 auto;
+  }
+  
+  .settings-button {
+    display: block;
+    margin: 0 auto;
+  }
+  
