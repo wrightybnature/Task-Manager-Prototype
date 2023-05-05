@@ -1,0 +1,64 @@
+.calendar-sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background-color: #3f4041;
+  transition: width 0.3s;
+  position: absolute;
+  z-index: 2;
+}
+
+.calendar-sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.view-options {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15%;
+}
+
+.view-options button {
+  /* Add your desired button styles */
+  margin-bottom: 5px;
+}
+
+.settings-logout {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.settings-logout button {
+  /* Add your desired button styles */
+  margin-bottom: 5px;
+}
+
+.calendar-sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  transition: width 0.3s;
+  position: absolute;
+  z-index: 2;
+}
+  
+.expand-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.top-section {
+  position: relative;
+  padding: 10px;
+}
