@@ -3,17 +3,19 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import './App.css';
-import NavBar from './NavBar';
 import { useNavigate } from 'react-router-dom';
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarDay, faCalendarWeek, faCalendarAlt, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import './AppCalendar.css';
 
 function AppCalendar() {
   const [events, setEvents] = useState([]);
+  const [sidebarExpanded, setSidebarExpanded] = useState(true);
+  const calendarRef = React.createRef();
+  const navigate = useNavigate();
+  const name = 'Felicity';
 
   const handleDateClick = (info) => {
-    // Add your event creation logic here
     const newEvent = {
       title: 'New Task',
       start: info.dateStr,
@@ -22,46 +24,57 @@ function AppCalendar() {
     setEvents([...events, newEvent]);
   };
 
-  const calendarRef = React.createRef();
-  const name = "Felicity";
-  const navigate = useNavigate();
-
-  const handleButtonClick = (view) => {
-    if (view === 'logout') {
-      // Log out logic here
-      navigate('/'); // Navigate to the login page
-    } else if (view === 'settings') {
-      navigate('/settings'); // Navigate to the settings page
-    } else {
-      calendarRef.current.getApi().changeView(view);
-    }
+  const handleViewChange = (view) => {
+    calendarRef.current.getApi().changeView(view);
   };
-  
+
+  const toggleSidebar = () => {
+    setSidebarExpanded(!sidebarExpanded);
+  };
 
   return (
-    // Step 2: Create a flex container for the navbar and the calendar
-    <div className="d-flex">
-      <NavBar onButtonClick={handleButtonClick} />
-    <div className="container mt-4">
-      <h1>Task Manager</h1>
-      <h3>Hello, {name}</h3>
-      <div>
+    <div className="app-calendar">
+      <div className={`calendar-sidebar ${sidebarExpanded ? 'expanded' : 'collapsed'}`}>
+        <button className="sidebar-toggle" onClick={toggleSidebar}>
+          {sidebarExpanded ? '-' : '+'}
+        </button>
+        <h1>Task Manager</h1>
+        <h3>Hello, {name}</h3>
+        <hr />
+        <button onClick={() => handleViewChange('dayGridMonth')}>
+          <FontAwesomeIcon icon={faCalendarAlt} />
+          {sidebarExpanded && ' Month'}
+        </button>
+        <button onClick={() => handleViewChange('timeGridWeek')}>
+          <FontAwesomeIcon icon={faCalendarWeek} />
+          {sidebarExpanded && ' Week'}
+        </button>
+        <button onClick={() => handleViewChange('timeGridDay')}>
+          <FontAwesomeIcon icon={faCalendarDay} />
+          {sidebarExpanded && ' Day'}
+        </button>
+        <hr />
+        <button onClick={() => navigate('/settings')}>
+          <FontAwesomeIcon icon={faCog} />
+          {sidebarExpanded && ' Settings'}
+        </button>
+        <button onClick={() => navigate('/')}>
+          <FontAwesomeIcon icon={faSignOutAlt} />
+          {sidebarExpanded && ' Logout'}
+        </button>
+      </div>
+      <div className="calendar-container mt-4">
         <div style={{ height: '500px' }}>
           <FullCalendar
             ref={calendarRef}
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
             initialView="dayGridMonth"
-            headerToolbar={{
-              left: 'prev',
-              center: 'title',
-              right: 'next dayGridMonth,timeGridWeek,timeGridDay,today',
-            }}
+            headerToolbar={false}
             events={events}
             dateClick={handleDateClick}
           />
         </div>
       </div>
-    </div>
     </div>
   );
 }

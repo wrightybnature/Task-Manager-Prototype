@@ -35,44 +35,39 @@ function SignUpPage() {
       <div className="separator">
         <span>or</span>
       </div>
-      {/* Add your sign-up form and logic here */}
       <form>
-        <input type="text" placeholder="Name" />
-        <input type="email" placeholder="Email" />
-        <input type="email" placeholder="Confirm Email" />
-
-        <div className="password-container">
-          <div className="input-with-icon">
-            <input
-              type={showPassword ? 'text' : 'password'}
-              placeholder="Password"
-            />
-            <button
-              type="button"
-              className="toggle-password-eye"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
-            </button>
-          </div>
-          <div className="input-with-icon">
-            <input
-              type={showConfirmPassword ? 'text' : 'password'}
-              placeholder="Confirm Password"
-            />
-            <button
-              type="button"
-              className="toggle-password-eye"
-              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-            >
-              <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
-            </button>
-          </div>
-        </div>
-
-        <button type="submit">Sign Up</button>
-      </form>
-    </div>
+      <input type="text" placeholder="Name" />
+      <input type="email" placeholder="Email" />
+      <input type="email" placeholder="Confirm Email" />
+      <div className="password-input">
+        <input
+          type={showPassword ? 'text' : 'password'}
+          placeholder="Password"
+        />
+        <button
+          className="password-toggle-button"
+          type="button"
+          onClick={() => setShowPassword(!showPassword)}
+        >
+          <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+        </button>
+      </div>
+      <div className="password-input">
+        <input
+          type={showConfirmPassword ? 'text' : 'password'}
+          placeholder="Confirm Password"
+        />
+        <button
+          className="password-toggle-button"
+          type="button"
+          onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+        >
+          <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
+        </button>
+      </div>
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
   );
 }
 

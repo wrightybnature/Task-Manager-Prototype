@@ -125,3 +125,16 @@
   .toggle-password-eye svg {
     color: #333; /* Change this to the desired color */
   }
+
+  .password-input {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .password-toggle-button {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+  }
