@@ -4,7 +4,6 @@ import LoginSignUpPage from './LoginSignUpPage';
 import AppCalendar from './AppCalendar';
 import SignUpPage from './SignUpPage';
 import SettingsPage from './SettingsPage';
-import './App.css';
 
 function App() {
   return (
