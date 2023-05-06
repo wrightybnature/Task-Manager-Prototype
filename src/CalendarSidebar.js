@@ -58,6 +58,10 @@ function CalendarSidebar({ sidebarCollapsed, setSidebarCollapsed, onButtonClick 
           </button>
         </div>
       </div>
+      <div
+        className={`calendar-container${sidebarCollapsed ? ' collapsed' : ''}`}
+        onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+      ></div>
     </div>
   );
 }

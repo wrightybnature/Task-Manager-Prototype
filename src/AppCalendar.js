@@ -3,7 +3,7 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import './App.css';
+import './AppCalendar.css';
 import CalendarSidebar from './CalendarSidebar';
 import { useNavigate } from 'react-router-dom';
 
@@ -41,8 +41,8 @@ function AppCalendar() {
         setSidebarCollapsed={setSidebarCollapsed}
         onButtonClick={handleButtonClick}
       />
-      <div className="container mt-4">
-        <div>
+      <div className="container-fluid mt-4">
+        <div className="calendar-container">
           <div style={{ height: '500px' }}>
             <FullCalendar
               ref={calendarRef}
@@ -52,6 +52,14 @@ function AppCalendar() {
                 left: 'prev',
                 center: 'title',
                 right: 'next,today',
+              }}
+              buttonText={{
+                today: ' Today',
+              }}
+              buttonIcons={{
+                prev: 'custom-chevron-left',
+                next: 'custom-chevron-right',
+                today: 'custom-today',
               }}
               events={events}
               dateClick={handleDateClick}

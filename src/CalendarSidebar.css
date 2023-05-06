@@ -1,64 +1,69 @@
+/* Container for the sidebar */
 .calendar-sidebar {
-  width: 250px;
+  width: 280px;
   min-height: 100vh;
-  background-color: #3f4041;
+  background-color: #4C6E75;
+  position: fixed;
+  overflow: auto;
   transition: width 0.3s;
-  position: absolute;
-  z-index: 2;
+  z-index: 1000;
 }
 
 .calendar-sidebar.collapsed {
-  width: 60px;
+  width: 100px;
+}
+
+.expand-collapse-btn {
+  display: block;
+  width: 100%;
+  height: 60px;
+  background-color: #6F9C8D;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 0;
+  font-size: 24px;
+  transition: background-color 0.2s;
+}
+
+.expand-collapse-btn:hover {
+  background-color: #5b827a;
 }
 
 .sidebar-content {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.view-options {
-  display: flex;
-  flex-direction: column;
-  margin-top: 15%;
+  padding: 20px;
 }
 
 .view-options button {
-  /* Add your desired button styles */
-  margin-bottom: 5px;
+  display: block;
+  width: 100%;
+  height: 60px;
+  background-color: #6F9C8D;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  transition: background-color 0.2s;
 }
 
-.settings-logout {
-  display: flex;
-  flex-direction: column;
-  margin-top: 15px;
+.view-options button:hover {
+  background-color: #5b827a;
 }
 
 .settings-logout button {
-  /* Add your desired button styles */
-  margin-bottom: 5px;
-}
-
-.calendar-sidebar {
-  width: 250px;
-  min-height: 100vh;
-  background-color: #f8f9fa;
-  transition: width 0.3s;
-  position: absolute;
-  z-index: 2;
-}
-  
-.expand-btn {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  font-size: 1.2rem;
-  background: none;
+  display: block;
+  width: 100%;
+  height: 40px;
+  background-color: #AAB2B9;
   border: none;
   cursor: pointer;
+  color: #ffffff;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  transition: background-color 0.2s;
 }
 
-.top-section {
-  position: relative;
-  padding: 10px;
+.settings-logout button:hover {
+  background-color: #8d9aa0;
 }

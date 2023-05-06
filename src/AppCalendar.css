@@ -1,51 +1,41 @@
 body {
-    background-color: #f0f2f5;
-  }
-  
-  .calendar-sidebar {
-    background-color: #2c3e50;
-    color: #ecf0f1;
-  }
-  
-  .calendar-sidebar button {
-    color: #ecf0f1;
-  }
-  
-  .calendar-sidebar button.active {
-    background-color: #1abc9c;
-  }
-  
-  .container {
-    margin-left: 250px;
-    transition: margin-left 0.3s;
-    width: calc(100% - 250px);
-  }
-  
-  .container.collapsed {
-    margin-left: 60px;
-    width: calc(100% - 60px);
-  }
-  
-  .calendar-container {
-    position: relative;
-    height: 500px;
-  }
-  
-  .chevron-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  
-  .chevron-left {
-    left: -40px;
-  }
-  
-  .chevron-right {
-    right: -40px;
-  }
-  
+  background-color: #F0F2F5;
+}
+
+.container {
+  margin-left: 270px;
+  transition: margin-left 0.3s;
+  width: calc(100% - 270px);
+}
+
+.container.collapsed {
+  margin-left: 100px;
+  width: calc(100% - 100px);
+}
+
+.calendar-container {
+  margin-left: 282px;
+  transition: margin-left 0.3s;
+}
+
+.calendar-container.collapsed {
+  margin-left: 0;
+}
+
+.calendar-title {
+  color: #34495E; /* Change the color of the title */
+}
+
+.calendar-chevron-left,
+.calendar-chevron-right {
+  color: #88A0A8; /* Change the color of the left and right chevrons */
+}
+
+.calendar-today-button {
+  color: #88A0A8; /* Change the color of the today button */
+}
+
+/* Add style for the today button icon */
+.calendar-today-button .fas {
+  margin-right: 5px;
+}
