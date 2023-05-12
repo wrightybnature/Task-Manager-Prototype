@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon, faSun, faTextHeight, faLanguage, faBell } from '@fortawesome/free-solid-svg-icons';
+import { faMoon, faTextHeight, faLanguage, faBell } from '@fortawesome/free-solid-svg-icons';
 import './SettingsPage.css';
 
 function SettingsPage() {
@@ -58,12 +58,6 @@ function SettingsPage() {
         </label>
       </div>
 
-      {/* Brightness slider */}
-      <div className="settings-label">
-        <FontAwesomeIcon icon={faSun} className="settings-icon" />
-        <span>Brightness</span>
-        <input type="range" min="1" max="100" className="slider" />
-      </div>
 
       {/* Text Size dropdown */}
       <div className="settings-label">
@@ -103,7 +97,7 @@ function SettingsPage() {
       <button className="settings-button support-button">Support</button>
 
       {/* Back button */}
-      <Link to="/calendar/dayGridMonth" className="settings-button back-button">Back
+      <Link to="/calendar" className="settings-button back-button">Back
       </Link>
     </div>
   );

@@ -15,7 +15,7 @@ function SignUpPage() {
 
 
   return (
-    <div>
+    <div className="centred">
       <h1>Sign Up</h1>
       <p>Create an account quickly using social media</p>
       <div className="social-buttons">
@@ -36,35 +36,36 @@ function SignUpPage() {
         <span>or</span>
       </div>
       <form>
-      <input type="text" placeholder="Name" />
-      <input type="email" placeholder="Email" />
-      <input type="email" placeholder="Confirm Email" />
-      <div className="password-input">
-        <input
-          type={showPassword ? 'text' : 'password'}
-          placeholder="Password"
-        />
-        <button
-          className="password-toggle-button"
-          type="button"
-          onClick={() => setShowPassword(!showPassword)}
-        >
-          <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
-        </button>
-      </div>
-      <div className="password-input">
-        <input
-          type={showConfirmPassword ? 'text' : 'password'}
-          placeholder="Confirm Password"
-        />
-        <button
-          className="password-toggle-button"
-          type="button"
-          onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-        >
-          <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
-        </button>
-      </div>
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="Email" />
+        <input type="email" placeholder="Confirm Email" />
+        
+        <div className="password-input">
+          <input
+            type={showPassword ? 'text' : 'password'}
+            placeholder="Password"
+          />
+          <button
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+          </button>
+        </div>
+        
+        <div className="password-input">
+          <input
+            type={showConfirmPassword ? 'text' : 'password'}
+            placeholder="Confirm Password"
+          />
+          <button
+            type="button"
+            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+          >
+            <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
+          </button>
+        </div>
+      
       <button type="submit">Sign Up</button>
     </form>
   </div>

@@ -48,18 +48,27 @@ function AppCalendar() {
               ref={calendarRef}
               plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
               initialView="dayGridMonth"
+              customButtons={{
+                customPrev: {
+                  text: '<',
+                  click: function() {
+                    calendarRef.current.getApi().prev();
+                  },
+                },
+                customNext: {
+                  text: '>',
+                  click: function() {
+                    calendarRef.current.getApi().next();
+                  },
+                },
+              }}
               headerToolbar={{
-                left: 'prev',
+                left: 'customPrev',
                 center: 'title',
-                right: 'next,today',
+                right: 'customNext,today',
               }}
               buttonText={{
                 today: ' Today',
-              }}
-              buttonIcons={{
-                prev: 'custom-chevron-left',
-                next: 'custom-chevron-right',
-                today: 'custom-today',
               }}
               events={events}
               dateClick={handleDateClick}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPlus,
@@ -8,11 +8,14 @@ import {
   faCalendarDay,
   faCog,
   faSignOutAlt,
+  faTrash,
 } from '@fortawesome/free-solid-svg-icons';
 import './CalendarSidebar.css';
 import TaskForm from './TaskForm';
 
 function CalendarSidebar({ sidebarCollapsed, setSidebarCollapsed, onButtonClick }) {
+  const [isFormVisible, setFormVisible] = useState(false);
+
   const handleButtonClick = (view) => {
     if (view === 'logout' || view === 'settings') {
       onButtonClick(view);
@@ -22,18 +25,14 @@ function CalendarSidebar({ sidebarCollapsed, setSidebarCollapsed, onButtonClick 
   return (
     <div className={`calendar-sidebar${sidebarCollapsed ? ' collapsed' : ''}`}>
       <button
-        className="expand-collapse-btn"
+        className={`expand-collapse-btn${isFormVisible ? ' expanded' : ''}`}
         onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
       >
         <FontAwesomeIcon icon={sidebarCollapsed ? faPlus : faMinus} />
       </button>
       <div className="sidebar-content">
-        {!sidebarCollapsed && (
-          <>
-            <h2>Task Manager</h2>
-            <h4>Hello, Felicity</h4>
-          </>
-        )}
+        <h2>Task Manager</h2>
+        <h4>Hello, Felicity</h4>
         <div className="view-options">
           <button onClick={() => onButtonClick('dayGridMonth')}>
             <FontAwesomeIcon icon={faCalendarAlt} />
@@ -48,9 +47,26 @@ function CalendarSidebar({ sidebarCollapsed, setSidebarCollapsed, onButtonClick 
             {!sidebarCollapsed && ' Day'}
           </button>
         </div>
-        <div>
-          <TaskForm />
+        <div className='divider'></div>
+        <div className="task-settings">
+          <div className="task-options">
+            <button
+              className="form-toggle-btn"
+              onClick={() => setFormVisible(!isFormVisible)}
+            >
+              <FontAwesomeIcon icon={isFormVisible ? faMinus : faPlus} />
+              {!sidebarCollapsed && ' New Task'}
+            </button>
+            {isFormVisible && <TaskForm isVisible={isFormVisible} />}
+          </div>
+          <div className="delete-task">
+            <button onClick={() => {/* add your delete task functionality here */}}>
+              <FontAwesomeIcon icon={faTrash} />
+              {!sidebarCollapsed && ' Delete Task'}
+            </button>
+          </div>
         </div>
+        <div className='divider'></div>
         <div className="settings-logout">
           <button onClick={() => handleButtonClick('settings')}>
             <FontAwesomeIcon icon={faCog} />
@@ -62,10 +78,6 @@ function CalendarSidebar({ sidebarCollapsed, setSidebarCollapsed, onButtonClick 
           </button>
         </div>
       </div>
-      <div
-        className={`calendar-container${sidebarCollapsed ? ' collapsed' : ''}`}
-        onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-      ></div>
     </div>
   );
 }

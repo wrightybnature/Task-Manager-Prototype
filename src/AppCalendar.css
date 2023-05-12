@@ -26,9 +26,17 @@ body {
   color: #34495E; /* Change the color of the title */
 }
 
-.calendar-chevron-left,
-.calendar-chevron-right {
-  color: #88A0A8; /* Change the color of the left and right chevrons */
+.fc-customPrev-button,
+.fc-customNext-button {
+  direction: ltr; /* Ensure the FontAwesome icon shows correctly */
+  width: 50px; /* Adjust the width to accommodate the text */
+}
+
+.fc-customPrev-button::before,
+.fc-customNext-button::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  text-indent: 0; /* Show the FontAwesome icon */
 }
 
 .calendar-today-button {

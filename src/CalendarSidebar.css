@@ -2,7 +2,7 @@
 .calendar-sidebar {
   width: 280px;
   min-height: 100vh;
-  background-color: #4C6E75;
+  background-color: #c1d6da;
   position: fixed;
   overflow: auto;
   transition: width 0.3s;
@@ -17,8 +17,8 @@
   display: block;
   width: 100%;
   height: 60px;
-  background-color: #6F9C8D;
-  color: #ffffff;
+  background-color: #95cab8;
+  color: #1f2e21;
   border: none;
   cursor: pointer;
   border-radius: 0;
@@ -27,17 +27,25 @@
 }
 
 .expand-collapse-btn:hover {
-  background-color: #5b827a;
+  background-color: #80b3a8;
 }
 
 .sidebar-content {
   padding: 20px;
+  color: #ffffff;
+  text-align: center;
+
+}
+
+.centered-title {
+  text-align: center;
+  color: #ffffff;
 }
 
 .view-options button {
   display: block;
-  width: 100%;
-  height: 60px;
+  width: 50%;
+  height: 40px;
   background-color: #6F9C8D;
   border: none;
   cursor: pointer;
@@ -45,25 +53,67 @@
   border-radius: 25px;
   margin-bottom: 10px;
   transition: background-color 0.2s;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.view-options button:hover {
-  background-color: #5b827a;
+.divider {
+  height: 2px; 
+  background-color: #ffffff; 
+  margin: 20px 0;  
 }
 
 .settings-logout button {
   display: block;
-  width: 100%;
+  width: 50%;
   height: 40px;
-  background-color: #AAB2B9;
+  background-color: #6f7a9c;
   border: none;
   cursor: pointer;
   color: #ffffff;
   border-radius: 25px;
   margin-bottom: 10px;
   transition: background-color 0.2s;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.view-options button:hover {
+  background-color: #5b827a;
+}
+
+.task-settings button {
+  display: block;
+  width: 100%;
+  height: 40px;
+  background-color: #08a873;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  transition: background-color 0.2s;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.settings-logout button {
+  background-color: #525a61;
 }
 
 .settings-logout button:hover {
-  background-color: #8d9aa0;
+  background-color: #608494;
+}
+
+.calendar-sidebar.collapsed .view-options button span,
+.calendar-sidebar.collapsed .settings-logout button span {
+  display: none;
+}
+
+.calendar-sidebar.collapsed .view-options button .collapsed,
+.calendar-sidebar.collapsed .settings-logout button .collapsed {
+  display: inline-block;
 }
