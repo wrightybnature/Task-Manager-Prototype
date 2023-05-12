@@ -10,6 +10,7 @@ import {
   faSignOutAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import './CalendarSidebar.css';
+import TaskForm from './TaskForm';
 
 function CalendarSidebar({ sidebarCollapsed, setSidebarCollapsed, onButtonClick }) {
   const handleButtonClick = (view) => {
@@ -46,6 +47,9 @@ function CalendarSidebar({ sidebarCollapsed, setSidebarCollapsed, onButtonClick 
             <FontAwesomeIcon icon={faCalendarDay} />
             {!sidebarCollapsed && ' Day'}
           </button>
+        </div>
+        <div>
+          <TaskForm />
         </div>
         <div className="settings-logout">
           <button onClick={() => handleButtonClick('settings')}>
