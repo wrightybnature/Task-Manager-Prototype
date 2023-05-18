@@ -42,7 +42,7 @@ function AppCalendar() {
         onButtonClick={handleButtonClick}
       />
       <div className="calendar-container">
-        <div>
+        <div className="calendar-header">
           <FullCalendar
             ref={calendarRef}
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
