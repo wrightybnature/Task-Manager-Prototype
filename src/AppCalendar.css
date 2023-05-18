@@ -1,29 +1,14 @@
-body {
-  background-color: #F0F2F5;
-}
-
-.container {
-  margin-left: 270px;
-  transition: margin-left 0.3s;
-  width: calc(100% - 270px);
-}
-
-.container.collapsed {
-  margin-left: 100px;
-  width: calc(100% - 100px);
-}
-
 .calendar-container {
   margin-left: 282px;
   transition: margin-left 0.3s;
 }
 
-.calendar-container.collapsed {
-  margin-left: 0;
+.calendar-container-collapse {
+  margin-left: 100px;
 }
 
 .calendar-title {
-  color: #34495E; /* Change the color of the title */
+  color: #182c21; /* Change the color of the title */
 }
 
 .fc-customPrev-button,
@@ -32,18 +17,36 @@ body {
   width: 50px; /* Adjust the width to accommodate the text */
 }
 
-.fc-customPrev-button::before,
-.fc-customNext-button::before {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  text-indent: 0; /* Show the FontAwesome icon */
+.fc-customPrev-button,
+.fc-customNext-button {
+  display: block;
+  width: 40px !important;
+  height: 40px !important;
+  background-color: #1c9c74  !important;
+  border: none !important;
+  cursor: pointer !important;
+  color: #ffffff !important;
+  border-radius: 25px !important;
+  margin-bottom: 10px !important;
+  transition: background-color 0.2s !important;
+  text-align: center !important;
 }
 
-.calendar-today-button {
-  color: #88A0A8; /* Change the color of the today button */
+.fc-today-button {
+  display: block;
+  width: 80px !important;
+  height: 40px !important;
+  background-color: #1c9c74  !important;
+  border: none !important;
+  cursor: pointer !important;
+  color: #ffffff !important;
+  border-radius: 25px !important;
+  transition: background-color 0.2s !important;
+  text-align: center !important;
 }
 
-/* Add style for the today button icon */
-.calendar-today-button .fas {
-  margin-right: 5px;
+.fc-customPrev-button:hover,
+.fc-customNext-button:hover,
+.fc-today-button:hover {
+  background-color: #54b080 !important;
 }

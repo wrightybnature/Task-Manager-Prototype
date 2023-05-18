@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './TaskForm.css';
 
 function TaskForm({ isVisible }) {
   // State to manage the task form inputs
@@ -17,41 +18,41 @@ function TaskForm({ isVisible }) {
 
   // Only render the form if it is set to visible
   return isVisible ? (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Date
-        <input type="date" name="date" value={task.date} onChange={handleChange} />
-      </label>
+    <div className="formTask">
+      <form onSubmit={handleSubmit}>
+        <label>
+          Date
+          <input type="date" name="date" value={task.date} onChange={handleChange} />
+        </label>
 
-      <label>
-        Start Time
-        <input type="time" name="startTime" value={task.startTime} onChange={handleChange} />
-      </label>
-      
-      <label>
-        End Time
-        <input type="time" name="endTime" value={task.endTime} onChange={handleChange} />
-      </label>
-      
-      <label>
-        Title
-        <input type="text" name="title" value={task.title} onChange={handleChange} />
-      </label>
+        <label>
+          Start Time
+          <input type="time" name="startTime" value={task.startTime} onChange={handleChange} />
+        </label>
+        
+        <label>
+          End Time
+          <input type="time" name="endTime" value={task.endTime} onChange={handleChange} />
+        </label>
+        
+        <label>
+          Title
+          <input type="text" name="title" value={task.title} onChange={handleChange} />
+        </label>
 
-      <label>
-        Description
-        <textarea name="description" value={task.description} onChange={handleChange} />
-      </label>
+        <label>
+          Description
+          <textarea name="description" className="textareaStyle" value={task.description} onChange={handleChange} />
+        </label>
 
-      <label>
-        Colour
-        <input type="color" name="color" value={task.color} onChange={handleChange} />
-      </label>
+        <label>
+          Colour
+          <input type="color" name="color" value={task.color} onChange={handleChange} />
+        </label>
 
-      <button type="submit">
-        Submit
-      </button>
-    </form>
+        <input type="submit" value="Submit" className="submit-task"></input>
+      </form>
+    </div>
   ) : null;
 }
 

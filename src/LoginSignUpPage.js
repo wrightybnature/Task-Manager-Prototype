@@ -31,13 +31,13 @@ function LoginSignUpPage() {
         <form onSubmit={handleLogin}>
           <input type="email" name="email" placeholder="Email" required />
           <input type="password" name="password" placeholder="Password" required />
-          <button type="login">Log in</button>
+          <button type="login" className="submit">Log in</button>
         </form>
       </div>
       <div className="signup-container">
         <h1>Sign Up</h1>
         <p>Keep track of all your tasks by making an account now!</p>
-        <button onClick={() => window.location.href = '/signup'}>Sign up</button>
+        <button className="submit" onClick={() => window.location.href = '/signup'}>Sign up</button>
         
       </div>
     </div>

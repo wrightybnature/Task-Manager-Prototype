@@ -1,0 +1,15 @@
+/* Task Form to create a new task, located within the CalendarSideBar */
+
+.formTask {
+    width: 91%;
+    margin-right: 10px;
+    text-align: center;
+}
+
+
+.submit-task {
+    width: 95%;
+    margin-left: 28px;
+    background-color: #30a6d6;
+    color: #ffff;
+}

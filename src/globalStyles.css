@@ -4,7 +4,7 @@
 /* Global font settings */
 body {
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   color: #333;
   line-height: 1.6;
 }
@@ -72,23 +72,25 @@ h6 {
 
 /* Buttons */
 .rounded-button {
-  display: block;
-  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
   height: 40px;
-  background-color: #6f7a9c;
+  background-color: #a6d5be;
   border: none;
   cursor: pointer;
-  color: #ffffff;
+  color: #333;
   border-radius: 25px;
   margin-bottom: 10px;
   transition: background-color 0.2s;
-  text-align: center;
   margin-left: auto;
   margin-right: auto;
+  text-decoration: none;
 }
-  
+
 .rounded-button:hover {
-  background-color: #3a70b2;
+  background-color: #54b080;
 }
 
 /* Other */
@@ -98,15 +100,67 @@ h6 {
   margin: 20px 0;  
 }
 
-input[type='form-input'] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 10px;
+.divider-clear {
+  height: 2px; 
+  margin: 30px 0;  
 }
 
 .centred {
   text-align: center;
 }
+
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form input {
+    width: 100%;
+    max-width: 320px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px;
+  }
+  
+  .input-field {
+    width: 100%;
+    max-width: 320px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px;
+  }
+
+  
+  .submit { /*Submit button at the bottom of the form*/
+    display: block;
+    width: 100px;
+    height: 40px;
+    background-color: #38a581;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    transition: background-color 0.2s;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.2s;
+  }
+
+  .submit:hover{
+    background-color: #54b080;
+  }
+
+  textarea {
+    width: 100%;
+    max-width: 320px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+  }

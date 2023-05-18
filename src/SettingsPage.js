@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon, faTextHeight, faLanguage, faBell } from '@fortawesome/free-solid-svg-icons';
+import { faMoon, faTextHeight, faLanguage, faBell} from '@fortawesome/free-solid-svg-icons';
 import './SettingsPage.css';
 
 function SettingsPage() {
   // State for user's name and email
-  const [userName, setUserName] = useState('Felicity');
-  const [userEmail, setUserEmail] = useState('felicity@example.com');
+  const [userName, setUserName] = useState('User\'s name');
+  const [userEmail, setUserEmail] = useState('test@example.com');
 
   // Handlers for name and email change
   const handleNameChange = (e) => {
@@ -19,7 +19,7 @@ function SettingsPage() {
   };
 
   return (
-    <div className="settings-container"> {/* Container for centering the content */}
+    <div className="settings-container">
       <h1>Settings</h1>
       <h2>Account</h2>
 
@@ -27,24 +27,23 @@ function SettingsPage() {
       <label htmlFor="name">Name:</label>
       <input
         type="text"
-        id="name"
         value={userName}
         onChange={handleNameChange}
-        className="settings-input name-input"
+        className="input-field"
       />
 
       {/* Email input field */}
       <label htmlFor="email">Email:</label>
       <input
         type="email"
-        id="email"
         value={userEmail}
         onChange={handleEmailChange}
-        className="settings-input email-input"
+        className="input-field"
       />
 
       {/* Reset Password button */}
-      <button className="settings-button reset-password-button">Reset Password</button>
+      <div></div>
+      <Link to="/reset-password" className="support-button">Reset Password</Link>
 
       <h2>Accessibility</h2>
 
@@ -57,7 +56,6 @@ function SettingsPage() {
           <span className="slider round"></span>
         </label>
       </div>
-
 
       {/* Text Size dropdown */}
       <div className="settings-label">
@@ -92,12 +90,12 @@ function SettingsPage() {
       </div>
 
       <h3>Other</h3>
-
       {/* Support button */}
-      <button className="settings-button support-button">Support</button>
+      <Link to="/support" className="support-button">Support</Link>
 
       {/* Back button */}
-      <Link to="/calendar" className="settings-button back-button">Back
+      <div className="divider-clear"></div>
+      <Link to="/calendar" className="rounded-button">Back
       </Link>
     </div>
   );

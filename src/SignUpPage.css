@@ -17,6 +17,7 @@
     border: 1px solid #e0e0e0;
     border-radius: 30px;
     color: #888; /* Add this line to set a default icon color */
+    cursor: pointer;
   }  
 
   .facebook-btn:hover {
@@ -57,38 +58,7 @@
     padding: 0 10px;
   }
   
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  form input {
-    width: 100%;
-    max-width: 320px;
-    padding: 10px;
-    margin: 5px 0;
-    border: 2px solid #e0e0e0;
-    border-radius: 30px;
-  }
-  
-  form button[type="submit"] {
-    display: block;
-    width: 20%;
-    height: 40px;
-    background-color: #38a581;
-    border: none;
-    cursor: pointer;
-    color: #ffffff;
-    border-radius: 25px;
-    margin-bottom: 10px;
-    transition: background-color 0.2s;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  form button[type="button"] {
+  form button[type="eye"] { /*For the Eye icons next to the passwords*/
     width: 60px;
     height: 30px;
     display: flex;
@@ -100,13 +70,28 @@
     color: #888;
   }
   
-  .password-container {
-    display: flex;
-    flex-direction: column;
-  }
-  
   .password-input {
     display: flex;
     align-items: center;
-    position: relative;
+  }
+
+  .submit { /*Submit button at the bottom of the form*/
+    display: block;
+    width: 100px;
+    height: 40px;
+    background-color: #38a581;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    transition: background-color 0.2s;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.2s;
+  }
+
+  .submit:hover{
+    background-color: #54b080;
   }

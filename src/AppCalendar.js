@@ -35,45 +35,43 @@ function AppCalendar() {
   };
 
   return (
-    <div className="d-flex">
+    <div>
       <CalendarSidebar
         sidebarCollapsed={sidebarCollapsed}
         setSidebarCollapsed={setSidebarCollapsed}
         onButtonClick={handleButtonClick}
       />
-      <div className="container-fluid mt-4">
-        <div className="calendar-container">
-          <div style={{ height: '500px' }}>
-            <FullCalendar
-              ref={calendarRef}
-              plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-              initialView="dayGridMonth"
-              customButtons={{
-                customPrev: {
-                  text: '<',
-                  click: function() {
-                    calendarRef.current.getApi().prev();
-                  },
+      <div className="calendar-container">
+        <div>
+          <FullCalendar
+            ref={calendarRef}
+            plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+            initialView="dayGridMonth"
+            
+            customButtons={{
+              customPrev: {
+                text: '<',
+                click: function() {
+                  calendarRef.current.getApi().prev();
                 },
-                customNext: {
-                  text: '>',
-                  click: function() {
-                    calendarRef.current.getApi().next();
-                  },
+              },
+              customNext: {
+                text: '>',
+                click: function() {
+                  calendarRef.current.getApi().next();
                 },
-              }}
-              headerToolbar={{
-                left: 'customPrev',
-                center: 'title',
-                right: 'customNext,today',
-              }}
-              buttonText={{
-                today: ' Today',
-              }}
-              events={events}
-              dateClick={handleDateClick}
-            />
-          </div>
+              },
+            }}
+            
+            headerToolbar={{
+              left: 'customPrev',
+              center: 'title',
+              right: 'customNext,today',
+            }}
+            
+            events={events}
+            dateClick={handleDateClick}
+          />
         </div>
       </div>
     </div>

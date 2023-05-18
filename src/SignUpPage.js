@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebookF,
@@ -36,17 +37,17 @@ function SignUpPage() {
         <span>or</span>
       </div>
       <form>
-        <input type="text" placeholder="Name" />
-        <input type="email" placeholder="Email" />
-        <input type="email" placeholder="Confirm Email" />
+        <input type="text" placeholder="Name" required/>
+        <input type="email" placeholder="Email" required/>
+        <input type="email" placeholder="Confirm Email" required/>
         
         <div className="password-input">
           <input
             type={showPassword ? 'text' : 'password'}
-            placeholder="Password"
+            placeholder="Password" required
           />
           <button
-            type="button"
+            type="eye"
             onClick={() => setShowPassword(!showPassword)}
           >
             <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
@@ -56,19 +57,21 @@ function SignUpPage() {
         <div className="password-input">
           <input
             type={showConfirmPassword ? 'text' : 'password'}
-            placeholder="Confirm Password"
+            placeholder="Confirm Password" required
           />
           <button
-            type="button"
+            type="eye"
             onClick={() => setShowConfirmPassword(!showConfirmPassword)}
           >
             <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
           </button>
         </div>
       
-      <button type="submit">Sign Up</button>
-    </form>
-  </div>
+        <input type="submit" value="Submit" className="submit"></input>
+      </form>
+      <div className="divider-clear"></div>
+      <Link to="/" className="rounded-button">Back</Link>
+    </div>
   );
 }
 

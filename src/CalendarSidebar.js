@@ -22,61 +22,62 @@ function CalendarSidebar({ sidebarCollapsed, setSidebarCollapsed, onButtonClick 
     }
   };
 
+  const name = "User!";
+
   return (
     <div className={`calendar-sidebar${sidebarCollapsed ? ' collapsed' : ''}`}>
       <button
-        className={`expand-collapse-btn${isFormVisible ? ' expanded' : ''}`}
+        className={`expand-collapse-btn${isFormVisible ? ' expanded' : ''}`} // HERE
         onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
       >
         <FontAwesomeIcon icon={sidebarCollapsed ? faPlus : faMinus} />
       </button>
-      <div className="sidebar-content">
+      <div className='centred'>
         <h2>Task Manager</h2>
-        <h4>Hello, Felicity</h4>
-        <div className="view-options">
-          <button onClick={() => onButtonClick('dayGridMonth')}>
-            <FontAwesomeIcon icon={faCalendarAlt} />
-            {!sidebarCollapsed && ' Month'}
+        <h3>Hello, {name}</h3>
+      </div>
+      <div className="view-options">
+        <button onClick={() => onButtonClick('dayGridMonth')}>
+          <FontAwesomeIcon icon={faCalendarAlt} />
+          {!sidebarCollapsed && '  Month'}
+        </button>
+        <button onClick={() => onButtonClick('timeGridWeek')}>
+          <FontAwesomeIcon icon={faCalendarWeek} />
+          {!sidebarCollapsed && '  Week'}
+        </button>
+        <button onClick={() => onButtonClick('timeGridDay')}>
+          <FontAwesomeIcon icon={faCalendarDay} />
+          {!sidebarCollapsed && '  Day'}
+        </button>
+      </div>
+      <div className='divider'></div>
+      <div className="task-settings">
+        <div>
+          <button
+            onClick={() => setFormVisible(!isFormVisible)}
+          >
+            <FontAwesomeIcon icon={isFormVisible ? faMinus : faPlus} />
+            {!sidebarCollapsed && ' New Task'}
           </button>
-          <button onClick={() => onButtonClick('timeGridWeek')}>
-            <FontAwesomeIcon icon={faCalendarWeek} />
-            {!sidebarCollapsed && ' Week'}
-          </button>
-          <button onClick={() => onButtonClick('timeGridDay')}>
-            <FontAwesomeIcon icon={faCalendarDay} />
-            {!sidebarCollapsed && ' Day'}
+          {isFormVisible && <TaskForm isVisible={isFormVisible} />}
+        </div>
+        <div className="delete-task">
+          <button onClick={() => {/* need to add delete task functionality here */}}>
+            <FontAwesomeIcon icon={faTrash} />
+            {!sidebarCollapsed && ' Delete Task'}
           </button>
         </div>
-        <div className='divider'></div>
-        <div className="task-settings">
-          <div className="task-options">
-            <button
-              className="form-toggle-btn"
-              onClick={() => setFormVisible(!isFormVisible)}
-            >
-              <FontAwesomeIcon icon={isFormVisible ? faMinus : faPlus} />
-              {!sidebarCollapsed && ' New Task'}
-            </button>
-            {isFormVisible && <TaskForm isVisible={isFormVisible} />}
-          </div>
-          <div className="delete-task">
-            <button onClick={() => {/* add your delete task functionality here */}}>
-              <FontAwesomeIcon icon={faTrash} />
-              {!sidebarCollapsed && ' Delete Task'}
-            </button>
-          </div>
-        </div>
-        <div className='divider'></div>
-        <div className="settings-logout">
-          <button onClick={() => handleButtonClick('settings')}>
-            <FontAwesomeIcon icon={faCog} />
-            {!sidebarCollapsed && ' Settings'}
-          </button>
-          <button onClick={() => handleButtonClick('logout')}>
-            <FontAwesomeIcon icon={faSignOutAlt} />
-            {!sidebarCollapsed && ' Logout'}
-          </button>
-        </div>
+      </div>
+      <div className='divider'></div>
+      <div className="settings-logout">
+        <button onClick={() => handleButtonClick('settings')}>
+          <FontAwesomeIcon icon={faCog} />
+          {!sidebarCollapsed && ' Settings'}
+        </button>
+        <button onClick={() => handleButtonClick('logout')}>
+          <FontAwesomeIcon icon={faSignOutAlt} />
+          {!sidebarCollapsed && ' Logout'}
+        </button>
       </div>
     </div>
   );
